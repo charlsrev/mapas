@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ionic.example">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -7,10 +7,19 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+    <!-- google maps javascript -->
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
+
+
+    <!--moduleangular-->
+    <script src="lib/ionic/js/moduleangular.js"></script>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -23,7 +32,16 @@
     <script src="js/controllers.js"></script>
   </head>
 
-  <body ng-app="starter">
-    <ion-nav-view></ion-nav-view>
+  <body ng-controller="MapCtrl">
+    <ion-header-bar class="bar-dark" >
+      <h1 class="title">Map</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
+    <ion-footer-bar class="bar-dark">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+    </ion-footer-bar>
   </body>
+
 </html>
