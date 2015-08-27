@@ -2,7 +2,7 @@ angular.module('ionic.example', ['ionic'])
 
     .controller('MapCtrl', function($scope, $ionicLoading, $compile) {
       function initialize() {
-        var myLatlng = new google.maps.LatLng("43.07493,-89.381388");
+        var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
         
         var mapOptions = {
           center: myLatlng,
